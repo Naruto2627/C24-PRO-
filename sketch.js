@@ -1,10 +1,7 @@
-var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground;
 var paper,dustbin,ground;
 const Engine = Matter.Engine;
 const World = Matter.World;
-const Bodies = Matter.Bodies;
-const Body = Matter.Body;
+const Bodies = Matter.Bodies
 
 function preload()
 {
@@ -13,26 +10,15 @@ function preload()
 
 function setup() {
 	createCanvas(1920,1080);
-	//Text("x"+mouseY+mouseX,50,100);
-
 
 	engine = Engine.create();
 	world = engine.world;
 
-	
-	//packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1.5, isStatic:false});
-	//World.add(world, packageBody);
-	
-
-	
-	//ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
-	//World.add(world, ground);
-
 	ground = new Ground(200,650,20000,10);
-	paper =  new Paper(200,450,45);
-	dustbin = new Dustbin(878,638,10,200);
-	 
-
+	paper =  new Paper(200,450);
+	dustbin1 = new Dustbin(886,590,20,110);
+	dustbin2 = new Dustbin(1079,590,20,110);
+	dustbin3 = new Dustbin(985,640,173,20);
 
 
 	Engine.run(engine);
@@ -46,9 +32,11 @@ function draw() {
 
   ground.display();
   paper.display();
-  bin.display();
+  dustbin1.display();
+  dustbin2.display();
+  dustbin3.display(); 
 
-  text(mouseX+","+mouseY,400,300);
+  text(mouseX+","+mouseY,92,30);
 
   
   drawSprites();
@@ -58,7 +46,7 @@ function draw() {
 function keyPressed() {
 	if (keyCode === UP_ARROW) {
 
-	  Matter.Body.applyForce(paper.body,paper.body.position,{x:85,y:-85});
+	  Matter.Body.applyForce(paper.body,paper.body.position,{x:42,y:-42});
   
 	}
 }
