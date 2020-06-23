@@ -1,10 +1,11 @@
-var paper,dustbin,ground;
+var paper,paperImg,dustbin,dustbinImg,ground;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies
 
 function preload()
 {
+	paper
 	
 }
 
