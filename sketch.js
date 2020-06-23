@@ -5,7 +5,6 @@ const Bodies = Matter.Bodies
 
 function preload()
 {
-	paper
 	
 }
 
